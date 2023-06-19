@@ -31,8 +31,14 @@ python main.py
 
 The starter listens on port 8000 on address [0.0.0.0](0.0.0.0:8080).
 
-5. To run the tests
+## To run the tests
 
 ```bash
 pytest -v
 ```
+
+## Postman collection & swagger
+
+1. Postman collection and environment added in postman folder.
+
+2. Swagger yaml file added in swagger folder. Swagger can be viewed by pasting its content in `https://editor.swagger.io/`
