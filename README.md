@@ -21,7 +21,9 @@ $ python -m venv venv
 (venv)$ pip install -r requirements.txt
 ```
 
-3. You also need to start your mongodb instance either locally or on Docker and add mongo configuration in `.env.dev` and `.env.test` file.
+3. You also need to start your mongodb instance either locally or on Docker and add mongo configuration with database name in `.env.dev` and `.env.test` file.
+
+Example `mongodb://admin:password@localhost:27017/student`
 
 4. Start the application:
 
