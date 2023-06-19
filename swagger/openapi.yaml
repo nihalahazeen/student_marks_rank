@@ -1,0 +1,301 @@
+openapi: 3.0.0
+info:
+  title: student
+  version: 1.0.0
+servers:
+  - url: http://{{host}}
+paths:
+  /student:
+    post:
+      tags:
+        - General
+      summary: studentMarks Add
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                student_name: Jane
+                subject: Hindi
+                marks: 89
+      responses:
+        '200':
+          description: OK
+          headers:
+            date:
+              schema:
+                type: string
+                example: Sun, 18 Jun 2023 13:16:31 GMT
+            server:
+              schema:
+                type: string
+                example: uvicorn
+            content-length:
+              schema:
+                type: integer
+                example: '231'
+            content-type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status_code: 200
+                response_type: success
+                description: Student created successfully
+                data:
+                  _id: 648f03b07c97dda91a2a2de3
+                  student_name: Jane
+                  student_id: 2b95993380f8be6bd4bd46bf44f98db9
+                  subject: Hindi
+                  marks: 89
+  /student/{id}:
+    put:
+      tags:
+        - General
+      summary: studentMarks Update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                marks: 56
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            date:
+              schema:
+                type: string
+                example: Sun, 18 Jun 2023 13:18:00 GMT
+            server:
+              schema:
+                type: string
+                example: uvicorn
+            content-length:
+              schema:
+                type: integer
+                example: '252'
+            content-type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status_code: 200
+                response_type: success
+                description: 'Student with ID: 648f03b07c97dda91a2a2de3 updated'
+                data:
+                  _id: 648f03b07c97dda91a2a2de3
+                  student_name: Jane
+                  student_id: 2b95993380f8be6bd4bd46bf44f98db9
+                  subject: Hindi
+                  marks: 56
+    get:
+      tags:
+        - General
+      summary: studentMarksById
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            date:
+              schema:
+                type: string
+                example: Sun, 18 Jun 2023 13:19:50 GMT
+            server:
+              schema:
+                type: string
+                example: uvicorn
+            content-length:
+              schema:
+                type: integer
+                example: '238'
+            content-type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status_code: 200
+                response_type: success
+                description: Student data retrieved successfully
+                data:
+                  _id: 648f03b07c97dda91a2a2de3
+                  student_name: Jane
+                  student_id: 2b95993380f8be6bd4bd46bf44f98db9
+                  subject: Hindi
+                  marks: 56
+    delete:
+      tags:
+        - General
+      summary: studentMarksById
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            date:
+              schema:
+                type: string
+                example: Sun, 18 Jun 2023 13:21:26 GMT
+            server:
+              schema:
+                type: string
+                example: uvicorn
+            content-length:
+              schema:
+                type: integer
+                example: '129'
+            content-type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status_code: 200
+                response_type: success
+                description: 'Student marks with ID: 648f03b07c97dda91a2a2de3 removed'
+                data: true
+  /student/:
+    get:
+      tags:
+        - General
+      summary: studentMarks List
+      responses:
+        '200':
+          description: OK
+          headers:
+            date:
+              schema:
+                type: string
+                example: Sun, 18 Jun 2023 13:18:50 GMT
+            server:
+              schema:
+                type: string
+                example: uvicorn
+            content-length:
+              schema:
+                type: integer
+                example: '1050'
+            content-type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status_code: 200
+                response_type: success
+                description: Students data retrieved successfully
+                data:
+                  - _id: 648d97095751ec10311fc218
+                    student_name: Ann
+                    student_id: 82e335f7ac0e0e412b2ae15abe662110
+                    subject: Maths
+                    marks: 67
+                  - _id: 648d97c38e088d9361bb030b
+                    student_name: Ann
+                    student_id: 82e335f7ac0e0e412b2ae15abe662110
+                    subject: English
+                    marks: 78
+                  - _id: 648d97d88e088d9361bb030c
+                    student_name: Ann
+                    student_id: 82e335f7ac0e0e412b2ae15abe662110
+                    subject: Science
+                    marks: 78
+                  - _id: 648d97e38e088d9361bb030d
+                    student_name: Alex
+                    student_id: a08372b70196c21a9229cf04db6b7ceb
+                    subject: Science
+                    marks: 67
+                  - _id: 648e8e9c36626891daf35c02
+                    student_name: Alex
+                    student_id: a08372b70196c21a9229cf04db6b7ceb
+                    subject: Science
+                    marks: 59
+                  - _id: '648e99020138316030339381'
+                    student_name: Alex
+                    student_id: a08372b70196c21a9229cf04db6b7ceb
+                    subject: Hindi
+                    marks: 89
+                  - _id: 648f03b07c97dda91a2a2de3
+                    student_name: Jane
+                    student_id: 2b95993380f8be6bd4bd46bf44f98db9
+                    subject: Hindi
+                    marks: 56
+  /rank:
+    get:
+      tags:
+        - General
+      summary: studentRank
+      responses:
+        '200':
+          description: OK
+          headers:
+            date:
+              schema:
+                type: string
+                example: Sun, 18 Jun 2023 13:22:11 GMT
+            server:
+              schema:
+                type: string
+                example: uvicorn
+            content-length:
+              schema:
+                type: integer
+                example: '330'
+            content-type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status_code: 200
+                response_type: success
+                description: Rank list retrieved successfully
+                data:
+                  - student_id: 82e335f7ac0e0e412b2ae15abe662110
+                    average_mark: 74.33333333333333
+                    student_name: Ann
+                    rank: 1
+                  - student_id: a08372b70196c21a9229cf04db6b7ceb
+                    average_mark: 71.66666666666667
+                    student_name: Alex
+                    rank: 2

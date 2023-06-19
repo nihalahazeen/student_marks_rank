@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "bdf7d798-251e-4997-a573-223477e425f6",
+		"name": "student",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14624960"
+	},
+	"item": [
+		{
+			"name": "studentMarks Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"student_name\":\"Jane\",\r\n    \"subject\":\"Hindi\",\r\n    \"marks\":89\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/student",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"student"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"student_name\":\"Alex\",\r\n    \"subject\":\"Hindi\",\r\n    \"marks\":89\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/student",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 18 Jun 2023 13:15:59 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "128"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status_code\": 400,\n    \"response_type\": \"error\",\n    \"description\": \"Student already exists\",\n    \"data\": \"Document id 648e99020138316030339381\"\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"student_name\":\"Jane\",\r\n    \"subject\":\"Hindi\",\r\n    \"marks\":89\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/student",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 18 Jun 2023 13:16:31 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "231"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status_code\": 200,\n    \"response_type\": \"success\",\n    \"description\": \"Student created successfully\",\n    \"data\": {\n        \"_id\": \"648f03b07c97dda91a2a2de3\",\n        \"student_name\": \"Jane\",\n        \"student_id\": \"2b95993380f8be6bd4bd46bf44f98db9\",\n        \"subject\": \"Hindi\",\n        \"marks\": 89\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "studentMarks Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"marks\":56\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/student/{{id}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"student",
+						"{{id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "studentMarks",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"marks\":56\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/student/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"{{id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 18 Jun 2023 13:18:00 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "252"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status_code\": 200,\n    \"response_type\": \"success\",\n    \"description\": \"Student with ID: 648f03b07c97dda91a2a2de3 updated\",\n    \"data\": {\n        \"_id\": \"648f03b07c97dda91a2a2de3\",\n        \"student_name\": \"Jane\",\n        \"student_id\": \"2b95993380f8be6bd4bd46bf44f98db9\",\n        \"subject\": \"Hindi\",\n        \"marks\": 56\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "studentMarks List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/student/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"student",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "studentMarksList",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 18 Jun 2023 13:18:50 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "1050"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status_code\": 200,\n    \"response_type\": \"success\",\n    \"description\": \"Students data retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"648d97095751ec10311fc218\",\n            \"student_name\": \"Ann\",\n            \"student_id\": \"82e335f7ac0e0e412b2ae15abe662110\",\n            \"subject\": \"Maths\",\n            \"marks\": 67\n        },\n        {\n            \"_id\": \"648d97c38e088d9361bb030b\",\n            \"student_name\": \"Ann\",\n            \"student_id\": \"82e335f7ac0e0e412b2ae15abe662110\",\n            \"subject\": \"English\",\n            \"marks\": 78\n        },\n        {\n            \"_id\": \"648d97d88e088d9361bb030c\",\n            \"student_name\": \"Ann\",\n            \"student_id\": \"82e335f7ac0e0e412b2ae15abe662110\",\n            \"subject\": \"Science\",\n            \"marks\": 78\n        },\n        {\n            \"_id\": \"648d97e38e088d9361bb030d\",\n            \"student_name\": \"Alex\",\n            \"student_id\": \"a08372b70196c21a9229cf04db6b7ceb\",\n            \"subject\": \"Science\",\n            \"marks\": 67\n        },\n        {\n            \"_id\": \"648e8e9c36626891daf35c02\",\n            \"student_name\": \"Alex\",\n            \"student_id\": \"a08372b70196c21a9229cf04db6b7ceb\",\n            \"subject\": \"Science\",\n            \"marks\": 59\n        },\n        {\n            \"_id\": \"648e99020138316030339381\",\n            \"student_name\": \"Alex\",\n            \"student_id\": \"a08372b70196c21a9229cf04db6b7ceb\",\n            \"subject\": \"Hindi\",\n            \"marks\": 89\n        },\n        {\n            \"_id\": \"648f03b07c97dda91a2a2de3\",\n            \"student_name\": \"Jane\",\n            \"student_id\": \"2b95993380f8be6bd4bd46bf44f98db9\",\n            \"subject\": \"Hindi\",\n            \"marks\": 56\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "studentMarksById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/student/{{id}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"student",
+						"{{id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "studentMarks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"{{id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 18 Jun 2023 13:19:50 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "238"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status_code\": 200,\n    \"response_type\": \"success\",\n    \"description\": \"Student data retrieved successfully\",\n    \"data\": {\n        \"_id\": \"648f03b07c97dda91a2a2de3\",\n        \"student_name\": \"Jane\",\n        \"student_id\": \"2b95993380f8be6bd4bd46bf44f98db9\",\n        \"subject\": \"Hindi\",\n        \"marks\": 56\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "studentMarksById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/student/{{id}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"student",
+						"{{id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "studentMarks",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/student/648f03b07c97dda91a2a2de3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"student",
+								"648f03b07c97dda91a2a2de3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 18 Jun 2023 13:21:26 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "129"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status_code\": 200,\n    \"response_type\": \"success\",\n    \"description\": \"Student marks with ID: 648f03b07c97dda91a2a2de3 removed\",\n    \"data\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "studentRank",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/rank",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"rank"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "studentMarks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/rank",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"rank"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 18 Jun 2023 13:22:11 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "330"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status_code\": 200,\n    \"response_type\": \"success\",\n    \"description\": \"Rank list retrieved successfully\",\n    \"data\": [\n        {\n            \"student_id\": \"82e335f7ac0e0e412b2ae15abe662110\",\n            \"average_mark\": 74.33333333333333,\n            \"student_name\": \"Ann\",\n            \"rank\": 1\n        },\n        {\n            \"student_id\": \"a08372b70196c21a9229cf04db6b7ceb\",\n            \"average_mark\": 71.66666666666667,\n            \"student_name\": \"Alex\",\n            \"rank\": 2\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
